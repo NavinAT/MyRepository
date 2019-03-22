@@ -1,0 +1,73 @@
+﻿@using MyFirstMVCApplication.Models
+@model MyFirstMVCApplication.Models.MyTeam
+
+@{
+    ViewBag.Title = "CreateTeam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateTeam</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Create Your Team</h4>
+    <hr />
+
+    @Html.DropDownListFor(model => model.Team1, new SelectList(Enum.GetValues(typeof(MyTeam.TeamList))), "Team 1", new { @class = "form-control", style = "display:inline; margin-right: 100px;" })
+    @Html.DropDownListFor(model => model.Team2, new SelectList(Enum.GetValues(typeof(MyTeam.TeamList))), "Team 2", new { @class = "form-control", style = "display:inline" })
+    <br />
+    <br />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="Go" class="btn btn-default" />
+        </div>
+    </div>
+
+    @if(Model?.Team_One != null && Model?.Team_Two != null)
+    {
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 1", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 2", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 3", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 4", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 5", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 6", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 7", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 8", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 9", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 10", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Team1, new SelectList(Model.Team_One), "Player 11", new { @class = "form-control" })
+
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 1", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 2", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 3", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 4", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 5", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 6", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 7", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 8", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 9", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 10", new { @class = "form-control", style = "display:inline" })
+        @Html.DropDownListFor(m => m.Team2, new SelectList(Model.Team_Two), "Player 11", new { @class = "form-control", style = "display:inline" })
+    }
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="CreateTeam" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
