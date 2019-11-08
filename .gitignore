@@ -259,3 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/MutualFund/MutualFundAPI/App.config
+/MutualFund/MutualFundAPI/MutualFundAPI.csproj
+/MutualFund/MutualFundAPI/MutualFundAPI.sln
+/MutualFund/MutualFundAPI/NavMutualFund.cs
+/MutualFund/MutualFundAPI/Properties/AssemblyInfo.cs
+/MutualFund/MutualFundAPITest/MutualFundAPITest.csproj
+/MutualFund/MutualFundAPITest/NavMutualFundTest.cs
+/MutualFund/MutualFundAPITest/Properties/AssemblyInfo.cs
