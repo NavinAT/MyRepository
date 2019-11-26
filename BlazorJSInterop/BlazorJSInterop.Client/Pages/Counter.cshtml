@@ -1,4 +1,6 @@
-﻿@page "/counter"
+﻿@page "/counter"  
+@using Microsoft.JSInterop
+
 
 <h1>Counter</h1>
 
@@ -12,5 +14,10 @@
     void IncrementCount()
     {
         currentCount++;
+    }
+
+    protected void CallJSMethod()
+    {
+
     }
 }
