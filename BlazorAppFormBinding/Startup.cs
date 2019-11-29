@@ -29,8 +29,8 @@ namespace BlazorAppFormBinding
 			services.AddServerSideBlazor();
 			services.AddSingleton<WeatherForecastService>();
 
-			SqlConnectionConfiguration sqlConnectionConfiguration = new SqlConnectionConfiguration(this.Configuration.GetConnectionString("SqlDbContext"));
-			services.AddSingleton(sqlConnectionConfiguration);
+			//SqlConnectionConfiguration sqlConnectionConfiguration = new SqlConnectionConfiguration(this.Configuration.GetConnectionString("SqlDbContext"));
+			//services.AddSingleton(sqlConnectionConfiguration);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
